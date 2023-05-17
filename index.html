@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Electron App</title>
+    <script>
+      const { ipcRenderer } = require("electron");
+      function shareData() {
+        ipcRenderer.send("msg", "hello from render process");
+        ipcRenderer.on("reply", (event, data) => {
+          console.log(data);
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <h1 style="color: aqua">Hello World</h1>
+    <h1 style="color: brown">Code Step by Step</h1>
+    <h1>reload</h1>
+    <!-- <a href="child.html" target="_blank">Go to child page</a>
+    <button onclick="shareData()">Share data</button> -->
+  </body>
+</html>

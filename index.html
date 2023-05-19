@@ -19,7 +19,29 @@
     <h1 style="color: aqua">Hello World</h1>
     <h1 style="color: brown">Code Step by Step</h1>
     <h1>reload</h1>
-    <!-- <a href="child.html" target="_blank">Go to child page</a>
-    <button onclick="shareData()">Share data</button> -->
+    <!-- <a href="child.html" target="_blank">Go to child page</a> -->
+    <button onclick="shareData()">Share data</button>
+    <img
+      style="height: 150px; width: 100"
+      src="https://picsum.photos/seed/picsum/200/300"
+      alt=""
+    />
+    <br />
+    <br />
+    <input type="range" style="-webkit-app-region: no-drag" />
+    <br />
+    <br />
+
+    <button onclick="zoomIn()">Zoom In</button>
+    <button onclick="zoomOut()">Zoom Out</button>
   </body>
+  <script>
+    const { webFrame } = require("electron");
+    function zoomOut() {
+      webFrame.setZoomFactor(webFrame.getZoomFactor() - 1);
+    }
+    function zoomIn() {
+      webFrame.setZoomFactor(webFrame.getZoomFactor() + 1);
+    }
+  </script>
 </html>
